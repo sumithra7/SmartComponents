@@ -1,0 +1,50 @@
+﻿@model Exception?
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Model is { } invalidConfigException)
+{
+    <div class="p-4 rounded-3 border border-2 border-danger shadow-lg" style="background: #ffdbdb">
+        <h4>Missing or invalid configuration</h4>
+        <p class="mt-4" style="font-weight: 600">
+            Reason: <span class="font-semibold">@invalidConfigException.Message</span>
+        </p>
+        <p>
+            To run the samples that use OpenAI inference, you need to configure an API key, either in
+            <code>appsettings.Development.json</code> or in <code>RepoSharedConfig.json</code> at the
+            root of this repo. For instructions, see
+            <a href="https://github.com/dotnet-smartcomponents/smartcomponents/blob/main/docs/configure-openai-backend.md">Configure the OpenAI backend</a>.
+        </p>
+        <p>
+            Without an API key, you can still run <a href="smartcombobox">Smart ComboBox</a>
+            sample since it does not require any external language model backend.
+        </p>
+    </div>
+}
+
+<p class="mt-4">
+    Smart Components lets you
+    <strong class="font-semibold">add genuinely useful AI-powered features to your .NET apps quickly and easily</strong>.
+</p>
+
+<p>
+    It's an experiment from the .NET team, and is initially available for ASP.NET Core 6.0 and later.
+</p>
+
+<h4 class="mt-4">Learn more</h4>
+
+<ul class="mt-4">
+    <li>
+        <p><a href="https://github.com/dotnet-smartcomponents/smartcomponents">Readme and documentation</a></p>
+    </li>
+    <li>
+        <p><a href="https://github.com/dotnet-smartcomponents/smartcomponents/blob/main/docs/getting-started-blazor.md">Getting started with Smart Components and Blazor</a></p>
+    </li>
+    <li>
+        <p><a href="https://github.com/dotnet-smartcomponents/smartcomponents/blob/main/docs/getting-started-mvc-razor-pages.md">Getting started with Smart Components and MVC/Razor Pages</a></p>
+    </li>
+    <li>
+        <p><a href="https://github.com/dotnet-smartcomponents/smartcomponents/issues">Submit feedback / questions</a></p>
+    </li>
+</ul>

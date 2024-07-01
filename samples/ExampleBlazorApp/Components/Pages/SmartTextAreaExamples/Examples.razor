@@ -1,0 +1,14 @@
+﻿@page "/smarttextarea"
+@page "/smarttextarea/{*Path}"
+@using ExampleBlazorApp.Components.TabSet
+
+<PageTitle>Smart TextArea</PageTitle>
+
+<TabSet>
+    <Tab TComponent="Basic" Url="smarttextarea" Text="Basic" />
+    <Tab TComponent="Configurable" Url="smarttextarea/configurable" Text="Configurable" />
+</TabSet>
+
+@code {
+    [Parameter] public string? Path { get; set; }
+}
